@@ -20,12 +20,12 @@ s3_client = boto3.client('s3', region_name=REGION)
 lambda_client = boto3.client('lambda', region_name=REGION)
 
 # --- Streamlit UI ---
-st.title("🧠 AI Data Normalization System (AWS)")
+st.title("AI Data Normalization System (AWS)")
 
 uploaded_file = st.file_uploader("Upload your CSV or Excel file", type=["csv", "xlsx"])
 
 if uploaded_file is not None:
-    st.success("✅ File uploaded successfully!")
+    st.success("File uploaded successfully!")
 
     # Read file
     if uploaded_file.name.endswith(".csv"):
@@ -41,10 +41,10 @@ if uploaded_file is not None:
         df.to_csv(buffer, index=False)
         buffer.seek(0)
         s3_client.upload_fileobj(buffer, S3_BUCKET, s3_key)
-    st.info(f"📦 File uploaded to S3 bucket: `{S3_BUCKET}`")
+    st.info(f"File uploaded to S3 bucket: `{S3_BUCKET}`")
 
     # Call Lambda (Bedrock-powered)
-    if st.button("🔍 Normalize Data with AI"):
+    if st.button("Normalize Data with AI"):
         payload = {
             "bucket": S3_BUCKET,
             "key": s3_key,
@@ -56,7 +56,7 @@ if uploaded_file is not None:
         )
 
         result = response["Payload"].read().decode("utf-8")
-        st.success("✅ AI Normalization Completed")
+        st.success("AI Normalization Completed")
         st.code(result)
 
         # Save to RDS MySQL
@@ -76,6 +76,7 @@ if uploaded_file is not None:
                     text("INSERT INTO normalization_results (file_name, normalized_schema) VALUES (:file, :schema)"),
                     {"file": uploaded_file.name, "schema": result}
                 )
-            st.info("📊 Results saved to RDS MySQL")
+            st.info("Results saved to RDS MySQL")
         except Exception as e:
             st.error(f"Database error: {e}")
+
