@@ -55,8 +55,11 @@ Display schema and explanation in Streamlit UI.
 ✅ Store data securely in cloud storage
 
 ✅ Generate BCNF schemas with AI
+
 ✅ Save normalized results in SQL DB
+
 ✅ Dual-cloud support: AWS + GCP
+
 ✅ Easy deployment via Streamlit
 
 ##🛠️ Technologies Used
