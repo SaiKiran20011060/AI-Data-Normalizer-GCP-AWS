@@ -51,7 +51,9 @@ Display schema and explanation in Streamlit UI.
 ##📊 Key Features
 
 ✅ Upload CSV/XLSX files
+
 ✅ Store data securely in cloud storage
+
 ✅ Generate BCNF schemas with AI
 ✅ Save normalized results in SQL DB
 ✅ Dual-cloud support: AWS + GCP
