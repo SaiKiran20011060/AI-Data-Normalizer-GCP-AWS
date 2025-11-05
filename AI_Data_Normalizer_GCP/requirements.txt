@@ -1,0 +1,7 @@
+streamlit
+pandas
+sqlalchemy
+pymysql
+google-cloud-storage
+google-cloud-sql-connector
+google-generativeai
