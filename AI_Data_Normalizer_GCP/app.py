@@ -41,13 +41,13 @@ pool = sqlalchemy.create_engine(
 )
 
 # -------------- STREAMLIT UI --------------
-st.title("🧠 AI Data Normalization System (GCP)")
+st.title("AI Data Normalization System (GCP)")
 st.write("Upload your dataset and let Gemini AI create a normalized database schema (up to BCNF).")
 
 uploaded_file = st.file_uploader("Upload your CSV or Excel file", type=["csv", "xlsx"])
 
 if uploaded_file is not None:
-    st.success("✅ File uploaded successfully!")
+    st.success("File uploaded successfully!")
 
     # Read the uploaded file
     if uploaded_file.name.endswith(".csv"):
@@ -66,10 +66,10 @@ if uploaded_file is not None:
         buffer.seek(0)
         blob.upload_from_file(buffer, content_type="text/csv")
 
-    st.info(f"📦 File uploaded to GCS: `{BUCKET_NAME}/uploads/{uploaded_file.name}`")
+    st.info(f"File uploaded to GCS: `{BUCKET_NAME}/uploads/{uploaded_file.name}`")
 
     # Trigger Gemini for normalization
-    if st.button("🔍 Normalize Data with AI"):
+    if st.button("Normalize Data with AI"):
         try:
             sample_data = df.head(5).to_csv(index=False)
             prompt = f"""
@@ -84,7 +84,7 @@ if uploaded_file is not None:
             response = model.generate_content(prompt)
 
             normalized_schema = response.text
-            st.success("✅ Normalization completed successfully!")
+            st.success("Normalization completed successfully!")
             st.code(normalized_schema, language="sql")
 
             # Save result to Cloud SQL
@@ -100,7 +100,8 @@ if uploaded_file is not None:
                     sqlalchemy.text("INSERT INTO normalization_results (file_name, normalized_schema) VALUES (:file, :schema)"),
                     {"file": uploaded_file.name, "schema": normalized_schema}
                 )
-            st.info("📊 Results saved to Cloud SQL database")
+            st.info("Results saved to Cloud SQL database")
 
         except Exception as e:
-            st.error(f"❌ Error: {e}")
+            st.error(f"Error: {e}")
+
