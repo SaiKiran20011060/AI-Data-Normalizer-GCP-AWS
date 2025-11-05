@@ -67,12 +67,12 @@ Display schema and explanation in Streamlit UI.
 
 | Category | AWS | GCP |
 |-----------|-----|-----|
-| **UI / Frontend** | Streamlit | Streamlit |
+| **UI / Frontend** | Streamlit (local) | Streamlit (local) |
 | **Backend** | Python | Python |
-| **AI Engine** | Bedrock (Claude/Sonnet) | Gemini AI |
+| **AI Engine** | Bedrock (Claude/Sonnet) via AWS Lambda | Gemini AI via API Key |
 | **Storage** | Amazon S3 | Google Cloud Storage |
 | **Database** | Amazon RDS (MySQL) | Cloud SQL (MySQL) |
-| **Compute** | AWS Lambda | Cloud Run / App Engine |
+| **Compute** | AWS Lambda | Local Execution (app.py) |
 | **SDK / Libraries** | boto3, sqlalchemy | google-cloud-storage, google-generativeai |
 
 ---
@@ -86,3 +86,4 @@ Display schema and explanation in Streamlit UI.
 | `GEMINI_API_KEY` | Gemini AI API key |
 | `GOOGLE_APPLICATION_CREDENTIALS` | Path to GCP service account JSON |
 | `PROJECT_ID`, `BUCKET_NAME`, `INSTANCE_CONNECTION_NAME` | GCP resource info |
+
