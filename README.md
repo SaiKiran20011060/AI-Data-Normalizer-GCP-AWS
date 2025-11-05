@@ -87,3 +87,6 @@ Display schema and explanation in Streamlit UI.
 | `GOOGLE_APPLICATION_CREDENTIALS` | Path to GCP service account JSON |
 | `PROJECT_ID`, `BUCKET_NAME`, `INSTANCE_CONNECTION_NAME` | GCP resource info |
 
+
+> **Note:**  
+> AWS Bedrock access is limited in the free tier. Due to restricted access to certain foundation models and API usage limits, generating and capturing AI normalization results (snapshots) from AWS Bedrock could not be demonstrated fully in this project. However, the Lambda integration and workflow setup remain functional.
