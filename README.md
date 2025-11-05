@@ -62,20 +62,27 @@ Display schema and explanation in Streamlit UI.
 
 ✅ Easy deployment via Streamlit
 
-##🛠️ Technologies Used
-Category	AWS	GCP
-UI / Frontend	Streamlit	Streamlit
-Backend	Python	Python
-AI Engine	Bedrock (Claude/Sonnet)	Gemini AI
-Storage	Amazon S3	Google Cloud Storage
-Database	Amazon RDS (MySQL)	Cloud SQL (MySQL)
-Compute	AWS Lambda	Cloud Run / App Engine
-SDK / Libraries	boto3, sqlalchemy	google-cloud-storage, google-generativeai
 
-##🔒 Environment Variables
-Variable	Description
-AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY	AWS credentials
-RDS_ENDPOINT, DB_USER, DB_PASS	RDS connection details
-GEMINI_API_KEY	Gemini AI API key
-GOOGLE_APPLICATION_CREDENTIALS	Path to GCP service account JSON
-PROJECT_ID, BUCKET_NAME, INSTANCE_CONNECTION_NAME	GCP resource info
+## 🛠️ Technologies Used
+
+| Category | AWS | GCP |
+|-----------|-----|-----|
+| **UI / Frontend** | Streamlit | Streamlit |
+| **Backend** | Python | Python |
+| **AI Engine** | Bedrock (Claude/Sonnet) | Gemini AI |
+| **Storage** | Amazon S3 | Google Cloud Storage |
+| **Database** | Amazon RDS (MySQL) | Cloud SQL (MySQL) |
+| **Compute** | AWS Lambda | Cloud Run / App Engine |
+| **SDK / Libraries** | boto3, sqlalchemy | google-cloud-storage, google-generativeai |
+
+---
+
+## 🔒 Environment Variables
+
+| Variable | Description |
+|-----------|-------------|
+| `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` | AWS credentials |
+| `RDS_ENDPOINT`, `DB_USER`, `DB_PASS` | RDS connection details |
+| `GEMINI_API_KEY` | Gemini AI API key |
+| `GOOGLE_APPLICATION_CREDENTIALS` | Path to GCP service account JSON |
+| `PROJECT_ID`, `BUCKET_NAME`, `INSTANCE_CONNECTION_NAME` | GCP resource info |
